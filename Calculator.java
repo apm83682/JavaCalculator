@@ -111,52 +111,52 @@ class Calculator implements ActionListener{
     public void actionPerformed(ActionEvent ae){
         for(int i=0; i<10; i++){
             if(ae.getSource() == numberButton[i]){
-                textField.setText(display.getText().concat(String.valueOf(i)));
+                textField.setText(textField.getText().concat(String.valueOf(i)));
                 
             }
         }
         if(ae.getSource() == decimalButton){
-            display.setText(display.getText().concat("."));
+            textField.setText(textField.getText().concat("."));
         }
         if(ae.getSource() == addButton){
-            num1 = Double.parseDouble(display.getText());
+            num1 = Double.parseDouble(textField.getText());
             operator = '+';
-            display.setText("");
+            textField.setText("");
         }
         if(ae.getSource() == subtractButton){
-            num1 = Double.parseDouble(display.getText());
+            num1 = Double.parseDouble(textField.getText());
             operator = '-';
-            display.setText("");
+            textField.setText("");
         }
         if(ae.getSource() == multiplyButton){
-            num1 = Double.parseDouble(display.getText());
+            num1 = Double.parseDouble(textField.getText());
             operator = '*';
-            display.setText("");
+            textField.setText("");
         }
         if(ae.getSource() == divideButton){
-            num1 = Double.parseDouble(display.getText());
+            num1 = Double.parseDouble(textField.getText());
             operator = '/';
-            display.setText("");
+            textField.setText("");
         }
         if(ae.getSource() == equalsButton){
-            num2 = Double.parseDouble(display.getText());
+            num2 = Double.parseDouble(textField.getText());
             switch(operator){
                 case '+': result = num1 + num2; break; 
                 case '-': result = num1 - num2; break;
                 case '*': result = num1 * num2; break;
                 case '/': result = num1 / num2; break;
             }
-            display.setText(String.valueOf(result));
+            textField.setText(String.valueOf(result));
         }
 
         if(ae.getSource() == clearButton){
-            display.setText("");
+            textField.setText("");
         }
         if(ae.getSource() == deleteButton){
             String whatsOnScreenNow = textField.getText();
-            display.setText("");
+            textField.setText("");
             for(int i=0; i<whatsOnScreenNow.length() - 1; i++){
-                display.setText(display.getText() + (whatsOnScreenNow.charAt(i)));
+                textField.setText(textField.getText() + (whatsOnScreenNow.charAt(i)));
             }
         }
 
