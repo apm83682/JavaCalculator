@@ -164,6 +164,7 @@ class Calculator implements ActionListener{
 
             textField.setText(Double.toString(Double.parseDouble(textField.getText())* - 1));
         }
+        System.out.println("Heyyyyyyy");
     }
 
 }   
